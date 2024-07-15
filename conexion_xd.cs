@@ -1,16 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Configuration;
 using System.Data;
-using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace trabajoDeBD
 {
     class conexion_xd
     {
-
         public MySqlConnection conexion;
         private string server = "localhost";
         private string sdatabase = "moviliariadb";
@@ -26,7 +21,6 @@ namespace trabajoDeBD
              ";Password=" + password;
         }
         public MySqlConnection getConexion()
-
         {
             if (conexion == null)
             {
@@ -34,7 +28,6 @@ namespace trabajoDeBD
                 conexion.Open();
             }
             return conexion;
-
         }
         public void cargaTabla(string sql, string tabla, DataGridView Grid, MySqlConnection Conex)
         {
@@ -44,10 +37,9 @@ namespace trabajoDeBD
             da.Fill(ds, tabla);
             Grid.DataSource = ds.Tables[0].DefaultView;
         }
-
     }
-
 }
-    
-    
+
+
+
 

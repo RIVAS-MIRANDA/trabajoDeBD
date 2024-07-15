@@ -135,29 +135,11 @@
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Guardar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAP4AAAEHCAYAAACOfPs0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAADL5JREFUeF7t3d2PVdUZx/H+JwV5ryAgLTJopfWFKswwyBAGBgYGBjgzwFSUwYoX
+        vQAADr0BR/uQrQAADL5JREFUeF7t3d2PVdUZx/H+JwV5ryAgLTJopfWFKswwyBAGBgYGBjgzwFSUwYoX
         xJfWpq2WXjZ9SWpsShO1ibw3bdJeSJs22qTClUoTLZqWxET5B1b3IqU+kt/qzJyz9z57rfW9+FzJrL15
         eL7CTPY55wvXrl934+MH3JwvzgJQstsXLHR/eOOi8501CeEDFVuxbLn72+XLMsBuIXygBnf3rHaX331X
         RtgNhA/UZO0DD7p/fPSRDLFu0w7/jsVL3PKly7tm2ZKl8r6shXPnuZ6VdwFTumvFl+UOWfNvmyN38VYL
@@ -462,7 +444,7 @@
   <data name="Borrar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADezSURBVHhe7d1n
+        DQAACw0B7QfALAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADezSURBVHhe7d1n
         uG1ldfZxOogoggKKlR47CmI0USkaWywgajRSxaiJFBuKUlRiQ1HEqJEiBiuKJb4oIJYYG9UuHEowihTF
         iiJNyHvPuLkysnMfOGfvNcec45n/+7p+X0Yie4y115j7Oauu8F//9V8AlpGygewmr5Wj5bPybfmZ3CTd
         /xP6dZWcJ1+UD8ibZR95gPudAfBsEcD/UDaTl8vX5UaJf4wwLhfL2+SRsrL7fQL4E1sEpk5ZSfaQH0r8

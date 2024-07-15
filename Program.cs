@@ -16,7 +16,7 @@ namespace trabajoDeBD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Usuario());
+            Application.Run(mainForm: new Usuario());
         }
     }
 }

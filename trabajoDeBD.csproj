@@ -217,7 +217,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="conexion_xd.cs" />
+    <Compile Include="Conexion_xd.cs" />
     <Compile Include="Cuentas.cs">
       <SubType>Form</SubType>
     </Compile>

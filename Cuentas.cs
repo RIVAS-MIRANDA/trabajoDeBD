@@ -16,14 +16,14 @@ namespace trabajoDeBD
         {
             InitializeComponent();
         }
-        conexion_xd conec = new conexion_xd();
+        //Conexion_xd conec = new Conexion_xd();
         private void Cuentas_Load(object sender, EventArgs e)
         {
 
-            conec.getConexion();
-            MessageBox.Show("conexion exitosa");
+            //conec.getConexion();
+           // MessageBox.Show("conexion exitosa");
 
-            conec.cargaTabla("SELECT * FROM cuentas", "cuentas", dataGridView1, conec.conexion);
+           // conec.cargaTabla("SELECT * FROM cuentas", "cuentas", dataGridView1, conec.conexion);
         }
     }
 }

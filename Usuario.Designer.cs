@@ -1,4 +1,5 @@
-﻿namespace trabajoDeBD
+﻿using System;
+namespace trabajoDeBD
 {
     partial class Usuario
     {
@@ -48,12 +49,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textnombre = new System.Windows.Forms.TextBox();
+            this.textid = new System.Windows.Forms.TextBox();
+            this.textdireccion = new System.Windows.Forms.TextBox();
+            this.textfechadenacimiento = new System.Windows.Forms.TextBox();
+            this.texttelefono = new System.Windows.Forms.TextBox();
+            this.textfechadeinscripcion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +137,7 @@
             this.actualizar.Size = new System.Drawing.Size(27, 27);
             this.actualizar.TabIndex = 1;
             this.actualizar.UseVisualStyleBackColor = true;
-            this.actualizar.Click += new System.EventHandler(this.actualizar_Click);
+            this.actualizar.Click += new System.EventHandler(this.Actualizar_Click);
             // 
             // Borrar
             // 
@@ -186,7 +187,7 @@
             this.Agregar.Size = new System.Drawing.Size(30, 27);
             this.Agregar.TabIndex = 5;
             this.Agregar.UseVisualStyleBackColor = true;
-            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
+            this.Agregar.Click += new System.EventHandler(this.agregar_Click);
             // 
             // label1
             // 
@@ -242,59 +243,59 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Fecha De Inscripcion";
             // 
-            // textBox2
+            // textnombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(7, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 12;
+            this.textnombre.Location = new System.Drawing.Point(7, 96);
+            this.textnombre.Name = "textnombre";
+            this.textnombre.Size = new System.Drawing.Size(140, 20);
+            this.textnombre.TabIndex = 12;
             // 
-            // textBox3
+            // textid
             // 
-            this.textBox3.Location = new System.Drawing.Point(7, 148);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(140, 20);
-            this.textBox3.TabIndex = 13;
+            this.textid.Location = new System.Drawing.Point(7, 148);
+            this.textid.Name = "textid";
+            this.textid.Size = new System.Drawing.Size(140, 20);
+            this.textid.TabIndex = 13;
             // 
-            // textBox4
+            // textdireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(7, 284);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 14;
+            this.textdireccion.Location = new System.Drawing.Point(7, 284);
+            this.textdireccion.Name = "textdireccion";
+            this.textdireccion.Size = new System.Drawing.Size(140, 20);
+            this.textdireccion.TabIndex = 14;
             // 
-            // textBox5
+            // textfechadenacimiento
             // 
-            this.textBox5.Location = new System.Drawing.Point(7, 191);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(140, 20);
-            this.textBox5.TabIndex = 15;
+            this.textfechadenacimiento.Location = new System.Drawing.Point(7, 191);
+            this.textfechadenacimiento.Name = "textfechadenacimiento";
+            this.textfechadenacimiento.Size = new System.Drawing.Size(140, 20);
+            this.textfechadenacimiento.TabIndex = 15;
             // 
-            // textBox6
+            // texttelefono
             // 
-            this.textBox6.Location = new System.Drawing.Point(7, 236);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(140, 20);
-            this.textBox6.TabIndex = 16;
+            this.texttelefono.Location = new System.Drawing.Point(7, 236);
+            this.texttelefono.Name = "texttelefono";
+            this.texttelefono.Size = new System.Drawing.Size(140, 20);
+            this.texttelefono.TabIndex = 16;
             // 
-            // textBox7
+            // textfechadeinscripcion
             // 
-            this.textBox7.Location = new System.Drawing.Point(7, 323);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(140, 20);
-            this.textBox7.TabIndex = 17;
+            this.textfechadeinscripcion.Location = new System.Drawing.Point(7, 323);
+            this.textfechadeinscripcion.Name = "textfechadeinscripcion";
+            this.textfechadeinscripcion.Size = new System.Drawing.Size(140, 20);
+            this.textfechadeinscripcion.TabIndex = 17;
             // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textfechadeinscripcion);
+            this.Controls.Add(this.texttelefono);
+            this.Controls.Add(this.textfechadenacimiento);
+            this.Controls.Add(this.textdireccion);
+            this.Controls.Add(this.textid);
+            this.Controls.Add(this.textnombre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -338,12 +339,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textnombre;
+        private System.Windows.Forms.TextBox textid;
+        private System.Windows.Forms.TextBox textdireccion;
+        private System.Windows.Forms.TextBox textfechadenacimiento;
+        private System.Windows.Forms.TextBox texttelefono;
+        private System.Windows.Forms.TextBox textfechadeinscripcion;
     }
 }
 
