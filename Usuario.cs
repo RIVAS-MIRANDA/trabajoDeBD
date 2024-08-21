@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.JScript;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Convert = System.Convert;
+
 
 namespace trabajoDeBD
 {
@@ -45,15 +48,14 @@ namespace trabajoDeBD
                 {
                     string query = "INSERT INTO usuario (Nombre, ID, FechaDeNacimiento, Telefono, Direccion, EsClienteDesde) VALUES (@nombre, @id, @fecha_de_nacimiento, @telefono, @direccion, @fecha_de_inscripcion)";
                     MySqlCommand cmd = new MySqlCommand(query, conec.getConexion());
-                    
                     cmd.Parameters.AddWithValue("@nombre", textnombre.Text);
                     cmd.Parameters.AddWithValue("@id", textid.Text);
-                    cmd.Parameters.AddWithValue("@fecha_de_nacimiento", textfechadenacimiento.Text);
-                    cmd.Parameters.AddWithValue("@telefono", texttelefono.Text);
+                    cmd.Parameters.AddWithValue("@fecha_de_nacimiento", (textfechadenacimiento.Text));
+                    cmd.Parameters.AddWithValue("@telefono", Convert.ToInt64(texttelefono.Text));
                     cmd.Parameters.AddWithValue("@direccion", textdireccion.Text);
-                    cmd.Parameters.AddWithValue("@fecha_de_inscripcion", textfechadeinscripcion.Text);
+                    cmd.Parameters.AddWithValue("@fecha_de_inscripcion", (textfechadeinscripcion.Text));
                     cmd.ExecuteNonQuery();
-                   // MessageBox.Show("Datos agregados exitosamente");
+                    // MessageBox.Show("Datos agregados exitosamente");
                     conec.cargaTabla("SELECT * FROM usuario", "usuario", dataGridView1, conec.conexion);
                 }
                 catch (Exception ex)
@@ -65,6 +67,7 @@ namespace trabajoDeBD
                     conec.getConexion().Close();
                 }
             }
+            limpiar();
         }
 
         private void Guardar_Click(object sender, EventArgs e)
@@ -75,14 +78,14 @@ namespace trabajoDeBD
             {
                 try
                 {
-                    string query = "UPDATE usuario SET Nombre = @nombre, FechaDeNacimiento = @fecha_de_nacimiento, Telefono = @telefono, Direccion = @direccion, EsClienteDesde = @fecha_de_inscripcion WHERE ID = @id";
+                    string query = "UPDATE usuario SNombre = @nombre, FechaDeNacimiento = @fecha_de_nacimiento, Telefono = @telefono, Direccion = @direccion, EsClienteDesde = @fecha_de_inscripcion WHERE ID = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conec.getConexion());
                     cmd.Parameters.AddWithValue("@nombre", textnombre.Text);
                     cmd.Parameters.AddWithValue("@id", textid.Text);
-                    cmd.Parameters.AddWithValue("@fecha_de_nacimiento", textfechadenacimiento.Text);
-                    cmd.Parameters.AddWithValue("@telefono", texttelefono.Text);
+                    cmd.Parameters.AddWithValue("@fecha_de_nacimiento", (textfechadenacimiento.Text));
+                    cmd.Parameters.AddWithValue("@telefono", Convert.ToInt64(texttelefono.Text));
                     cmd.Parameters.AddWithValue("@direccion", textdireccion.Text);
-                    cmd.Parameters.AddWithValue("@fecha_de_inscripcion", textfechadeinscripcion.Text);
+                    cmd.Parameters.AddWithValue("@fecha_de_inscripcion", (textfechadeinscripcion.Text));
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos guardados exitosamente");
                     conec.cargaTabla("SELECT * FROM usuario", "usuario", dataGridView1, conec.conexion);
@@ -96,6 +99,7 @@ namespace trabajoDeBD
                     conec.getConexion().Close();
                 }
             }
+            limpiar();
         }
 
         private void Actualizar_Click(object sender, EventArgs e)
@@ -107,14 +111,15 @@ namespace trabajoDeBD
                 try
                 {
 
-                    string query = "UPDATE usuario SET Nombre = @nombre, FechaDeNacimiento = @fecha_de_nacimiento, Telefono = @telefono, Direccion = @direccion, EsClienteDesde = @fecha_de_inscripcion WHERE ID = @id";
+                    string query = "UPDATE usuario SET Nombre = @nombre, FechaDeNacimiento =" +
+                        " @fecha_de_nacimiento, Telefono = @telefono, Direccion = @direccion, EsClienteDesde = @fecha_de_inscripcion WHERE ID = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conec.getConexion());
                     cmd.Parameters.AddWithValue("@nombre", textnombre.Text);
                     cmd.Parameters.AddWithValue("@id", textid.Text);
-                    cmd.Parameters.AddWithValue("@fecha_de_nacimiento", textfechadenacimiento.Text);
-                    cmd.Parameters.AddWithValue("@telefono", texttelefono.Text);
+                    cmd.Parameters.AddWithValue("@fecha_de_nacimiento", (textfechadenacimiento.Text));
+                    cmd.Parameters.AddWithValue("@telefono", Convert.ToInt64(texttelefono.Text));
                     cmd.Parameters.AddWithValue("@direccion", textdireccion.Text);
-                    cmd.Parameters.AddWithValue("@fecha_de_inscripcion", textfechadeinscripcion.Text);
+                    cmd.Parameters.AddWithValue("@fecha_de_inscripcion", (textfechadeinscripcion.Text));
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Datos actalizados exitosamente");
                     conec.cargaTabla("SELECT * FROM usuario", "usuario", dataGridView1, conec.conexion);
@@ -128,6 +133,7 @@ namespace trabajoDeBD
                     conec.getConexion().Close();
                 }
             }
+            limpiar();
         }
 
         private void Borrar_Click(object sender, EventArgs e)
@@ -158,27 +164,30 @@ namespace trabajoDeBD
             {
                 MessageBox.Show("Por favor, selecciona un usuario para eliminar.");
             }
-        
-    }
+
+        }
 
         private void buscar_Click(object sender, EventArgs e)
         {
-
-            conec = new conexion_xd();
-
-            try
             {
-                string query = "SELECT * FROM usuario WHERE Nombre LIKE @Nombre";
-                MySqlCommand cmd = new MySqlCommand(query, conec.getConexion());
-                cmd.Parameters.AddWithValue("@Nombre", "%" + textnombre.Text + "%");
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "usuario");
-                dataGridView1.DataSource = ds.Tables[0].DefaultView;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al buscar: " + ex.Message);
+                conec = new conexion_xd();
+
+                try
+                {
+                    string query = "SELECT * FROM usuario WHERE Nombre LIKE @Nombre";
+                    MySqlCommand cmd = new MySqlCommand(query, conec.getConexion());
+                    cmd.Parameters.AddWithValue("@Nombre", "%" + tbuscar.Text + "%");
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "usuario");
+                    dataGridView1.DataSource = ds.Tables[0].DefaultView;
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al buscar: " + ex.Message + "\n" + ex.StackTrace);
+                }
+
             }
         }
 
@@ -194,7 +203,7 @@ namespace trabajoDeBD
 
         private bool ValidarDatos()
         {
-            if (string.IsNullOrEmpty(textnombre.Text) || string.IsNullOrEmpty(textid.Text) ||
+            if (string.IsNullOrEmpty(textnombre.Text) ||/* string.IsNullOrEmpty(textid.Text) ||*/
                 string.IsNullOrEmpty(textfechadenacimiento.Text) || string.IsNullOrEmpty(texttelefono.Text) ||
                 string.IsNullOrEmpty(textdireccion.Text) || string.IsNullOrEmpty(textfechadeinscripcion.Text))
             {
@@ -203,5 +212,15 @@ namespace trabajoDeBD
             }
             return true;
         }
+        private void limpiar()
+        {
+            textnombre.Text = "";
+            textid.Text= "";
+            textfechadenacimiento.Text = "";
+            texttelefono.Text = "";
+            textdireccion.Text = "";
+            textfechadeinscripcion.Text = "";
+        }
+       
     }
 }

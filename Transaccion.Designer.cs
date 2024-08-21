@@ -29,64 +29,66 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaccion));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Datatransaccion = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.Guardar = new FontAwesome.Sharp.IconButton();
+            this.Actualizar = new FontAwesome.Sharp.IconButton();
+            this.Eliminar = new FontAwesome.Sharp.IconButton();
+            this.Agregar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.texttransaccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.textidcuentas = new System.Windows.Forms.TextBox();
+            this.texttipotransaccion = new System.Windows.Forms.TextBox();
+            this.textmonto = new System.Windows.Forms.TextBox();
+            this.textfechatransaccion = new System.Windows.Forms.TextBox();
+            this.textubicacion = new System.Windows.Forms.TextBox();
+            this.Buscar = new FontAwesome.Sharp.IconButton();
+            this.texbuscar = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Datatransaccion)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Datatransaccion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Datatransaccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Datatransaccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(159, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(638, 392);
-            this.dataGridView1.TabIndex = 0;
+            this.Datatransaccion.Location = new System.Drawing.Point(159, 58);
+            this.Datatransaccion.Name = "Datatransaccion";
+            this.Datatransaccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Datatransaccion.Size = new System.Drawing.Size(638, 392);
+            this.Datatransaccion.TabIndex = 0;
+            this.Datatransaccion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Datatransaccion_CellClick);
             // 
             // Column1
             // 
-            this.Column1.DataPropertyName = "ID_Transaccion";
+            this.Column1.DataPropertyName = "IDTransaccion";
             this.Column1.HeaderText = "ID-Transaccion";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "ID_Cuentas";
+            this.Column2.DataPropertyName = "IDCuentas";
             this.Column2.HeaderText = "ID-Cuenta";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "Tipo_Transaccion";
+            this.Column3.DataPropertyName = "TipoTransaccion";
             this.Column3.HeaderText = "Tipo De Transaccion";
             this.Column3.Name = "Column3";
             // 
@@ -108,58 +110,61 @@
             this.Column6.HeaderText = "Ubicacion";
             this.Column6.Name = "Column6";
             // 
-            // iconButton1
+            // Guardar
             // 
-            this.iconButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton1.BackgroundImage")));
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(2, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(29, 27);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.Guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Guardar.BackgroundImage")));
+            this.Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Guardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Guardar.IconColor = System.Drawing.Color.Black;
+            this.Guardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Guardar.Location = new System.Drawing.Point(2, 2);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(29, 27);
+            this.Guardar.TabIndex = 1;
+            this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
-            // iconButton2
+            // Actualizar
             // 
-            this.iconButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton2.BackgroundImage")));
-            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(37, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(31, 27);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.Actualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Actualizar.BackgroundImage")));
+            this.Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Actualizar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Actualizar.IconColor = System.Drawing.Color.Black;
+            this.Actualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Actualizar.Location = new System.Drawing.Point(37, 2);
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.Size = new System.Drawing.Size(31, 27);
+            this.Actualizar.TabIndex = 2;
+            this.Actualizar.UseVisualStyleBackColor = true;
+            this.Actualizar.Click += new System.EventHandler(this.Actualizar_Click);
             // 
-            // iconButton3
+            // Eliminar
             // 
-            this.iconButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton3.BackgroundImage")));
-            this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(74, 2);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(33, 27);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Eliminar.BackgroundImage")));
+            this.Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Eliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Eliminar.IconColor = System.Drawing.Color.Black;
+            this.Eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Eliminar.Location = new System.Drawing.Point(74, 2);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(33, 27);
+            this.Eliminar.TabIndex = 3;
+            this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
-            // iconButton4
+            // Agregar
             // 
-            this.iconButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton4.BackgroundImage")));
-            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(113, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(32, 27);
-            this.iconButton4.TabIndex = 4;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.Agregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Agregar.BackgroundImage")));
+            this.Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Agregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Agregar.IconColor = System.Drawing.Color.Black;
+            this.Agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Agregar.Location = new System.Drawing.Point(113, 2);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(32, 27);
+            this.Agregar.TabIndex = 4;
+            this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // label1
             // 
@@ -170,12 +175,12 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "ID_Transaccion";
             // 
-            // textBox1
+            // texttransaccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 6;
+            this.texttransaccion.Location = new System.Drawing.Point(7, 74);
+            this.texttransaccion.Name = "texttransaccion";
+            this.texttransaccion.Size = new System.Drawing.Size(146, 20);
+            this.texttransaccion.TabIndex = 6;
             // 
             // label2
             // 
@@ -222,89 +227,90 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Ubication";
             // 
-            // textBox2
+            // textidcuentas
             // 
-            this.textBox2.Location = new System.Drawing.Point(7, 125);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 12;
+            this.textidcuentas.Location = new System.Drawing.Point(7, 125);
+            this.textidcuentas.Name = "textidcuentas";
+            this.textidcuentas.Size = new System.Drawing.Size(146, 20);
+            this.textidcuentas.TabIndex = 12;
             // 
-            // textBox3
+            // texttipotransaccion
             // 
-            this.textBox3.Location = new System.Drawing.Point(7, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
-            this.textBox3.TabIndex = 13;
+            this.texttipotransaccion.Location = new System.Drawing.Point(7, 176);
+            this.texttipotransaccion.Name = "texttipotransaccion";
+            this.texttipotransaccion.Size = new System.Drawing.Size(146, 20);
+            this.texttipotransaccion.TabIndex = 13;
             // 
-            // textBox4
+            // textmonto
             // 
-            this.textBox4.Location = new System.Drawing.Point(7, 229);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(146, 20);
-            this.textBox4.TabIndex = 14;
+            this.textmonto.Location = new System.Drawing.Point(7, 229);
+            this.textmonto.Name = "textmonto";
+            this.textmonto.Size = new System.Drawing.Size(146, 20);
+            this.textmonto.TabIndex = 14;
             // 
-            // textBox5
+            // textfechatransaccion
             // 
-            this.textBox5.Location = new System.Drawing.Point(7, 277);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(146, 20);
-            this.textBox5.TabIndex = 15;
+            this.textfechatransaccion.Location = new System.Drawing.Point(7, 277);
+            this.textfechatransaccion.Name = "textfechatransaccion";
+            this.textfechatransaccion.Size = new System.Drawing.Size(146, 20);
+            this.textfechatransaccion.TabIndex = 15;
             // 
-            // textBox6
+            // textubicacion
             // 
-            this.textBox6.Location = new System.Drawing.Point(7, 326);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(146, 20);
-            this.textBox6.TabIndex = 16;
+            this.textubicacion.Location = new System.Drawing.Point(7, 326);
+            this.textubicacion.Name = "textubicacion";
+            this.textubicacion.Size = new System.Drawing.Size(146, 20);
+            this.textubicacion.TabIndex = 16;
             // 
-            // iconButton5
+            // Buscar
             // 
-            this.iconButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton5.BackgroundImage")));
-            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(571, 12);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(24, 23);
-            this.iconButton5.TabIndex = 17;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.Buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Buscar.BackgroundImage")));
+            this.Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Buscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Buscar.IconColor = System.Drawing.Color.Black;
+            this.Buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Buscar.Location = new System.Drawing.Point(571, 12);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(24, 23);
+            this.Buscar.TabIndex = 17;
+            this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click_1);
             // 
-            // textBox7
+            // texbuscar
             // 
-            this.textBox7.Location = new System.Drawing.Point(403, 15);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 20);
-            this.textBox7.TabIndex = 18;
+            this.texbuscar.Location = new System.Drawing.Point(403, 15);
+            this.texbuscar.Name = "texbuscar";
+            this.texbuscar.Size = new System.Drawing.Size(162, 20);
+            this.texbuscar.TabIndex = 18;
             // 
-            // Cuentas
+            // Transaccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.iconButton5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.texbuscar);
+            this.Controls.Add(this.Buscar);
+            this.Controls.Add(this.textubicacion);
+            this.Controls.Add(this.textfechatransaccion);
+            this.Controls.Add(this.textmonto);
+            this.Controls.Add(this.texttipotransaccion);
+            this.Controls.Add(this.textidcuentas);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.texttransaccion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Cuentas";
-            this.Text = "Cuentas";
-            this.Load += new System.EventHandler(this.Cuentas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.Agregar);
+            this.Controls.Add(this.Eliminar);
+            this.Controls.Add(this.Actualizar);
+            this.Controls.Add(this.Guardar);
+            this.Controls.Add(this.Datatransaccion);
+            this.Name = "Transaccion";
+            this.Text = "Transaccion";
+            this.Load += new System.EventHandler(this.Transaccion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Datatransaccion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,30 +318,30 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Datatransaccion;
+        private FontAwesome.Sharp.IconButton Guardar;
+        private FontAwesome.Sharp.IconButton Actualizar;
+        private FontAwesome.Sharp.IconButton Eliminar;
+        private FontAwesome.Sharp.IconButton Agregar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox texttransaccion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textidcuentas;
+        private System.Windows.Forms.TextBox texttipotransaccion;
+        private System.Windows.Forms.TextBox textmonto;
+        private System.Windows.Forms.TextBox textfechatransaccion;
+        private System.Windows.Forms.TextBox textubicacion;
+        private FontAwesome.Sharp.IconButton Buscar;
+        private System.Windows.Forms.TextBox texbuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private System.Windows.Forms.TextBox textBox7;
     }
 }

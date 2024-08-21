@@ -41,7 +41,7 @@ namespace trabajoDeBD
             this.actualizar = new FontAwesome.Sharp.IconButton();
             this.Borrar = new FontAwesome.Sharp.IconButton();
             this.buscar = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbuscar = new System.Windows.Forms.TextBox();
             this.Agregar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -167,12 +167,12 @@ namespace trabajoDeBD
             this.buscar.UseVisualStyleBackColor = true;
             this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
-            // textBox1
+            // tbuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(376, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 4;
+            this.tbuscar.Location = new System.Drawing.Point(376, 33);
+            this.tbuscar.Name = "tbuscar";
+            this.tbuscar.Size = new System.Drawing.Size(176, 20);
+            this.tbuscar.TabIndex = 4;
             // 
             // Agregar
             // 
@@ -303,7 +303,7 @@ namespace trabajoDeBD
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Agregar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbuscar);
             this.Controls.Add(this.buscar);
             this.Controls.Add(this.Borrar);
             this.Controls.Add(this.actualizar);
@@ -325,7 +325,7 @@ namespace trabajoDeBD
         private FontAwesome.Sharp.IconButton actualizar;
         private FontAwesome.Sharp.IconButton Borrar;
         private FontAwesome.Sharp.IconButton buscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbuscar;
         private FontAwesome.Sharp.IconButton Agregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

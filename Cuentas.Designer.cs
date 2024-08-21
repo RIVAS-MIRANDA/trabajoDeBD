@@ -29,44 +29,76 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cuentas));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.idusuario = new System.Windows.Forms.TextBox();
+            this.idcuenta = new System.Windows.Forms.TextBox();
+            this.tipocuenta = new System.Windows.Forms.TextBox();
+            this.saldo = new System.Windows.Forms.TextBox();
+            this.fechacrecion = new System.Windows.Forms.TextBox();
+            this.txbuscar = new System.Windows.Forms.TextBox();
+            this.Guardar = new FontAwesome.Sharp.IconButton();
+            this.Actualizar = new FontAwesome.Sharp.IconButton();
+            this.Eliminar = new FontAwesome.Sharp.IconButton();
+            this.Agregar = new FontAwesome.Sharp.IconButton();
+            this.Buscar = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(147, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(651, 388);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView.Location = new System.Drawing.Point(147, 61);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(651, 388);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick_1);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "IDUsuario";
+            this.Column1.HeaderText = "ID Usuario";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "IDCuenta";
+            this.Column2.HeaderText = "ID Cuenta";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TipoCuenta";
+            this.Column3.HeaderText = "Tipo De Cuenta";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Saldo";
+            this.Column4.HeaderText = "Saldo";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "FechaDeCreacion";
+            this.Column5.HeaderText = "Fecha De Creacion";
+            this.Column5.Name = "Column5";
             // 
             // label1
             // 
@@ -113,169 +145,144 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha De Creacion";
             // 
-            // textBox1
+            // idusuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 6;
+            this.idusuario.Location = new System.Drawing.Point(6, 106);
+            this.idusuario.Name = "idusuario";
+            this.idusuario.Size = new System.Drawing.Size(135, 20);
+            this.idusuario.TabIndex = 6;
             // 
-            // textBox2
+            // idcuenta
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 7;
+            this.idcuenta.Location = new System.Drawing.Point(6, 161);
+            this.idcuenta.Name = "idcuenta";
+            this.idcuenta.Size = new System.Drawing.Size(135, 20);
+            this.idcuenta.TabIndex = 7;
             // 
-            // textBox3
+            // tipocuenta
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 20);
-            this.textBox3.TabIndex = 8;
+            this.tipocuenta.Location = new System.Drawing.Point(6, 208);
+            this.tipocuenta.Name = "tipocuenta";
+            this.tipocuenta.Size = new System.Drawing.Size(135, 20);
+            this.tipocuenta.TabIndex = 8;
             // 
-            // textBox4
+            // saldo
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 259);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 20);
-            this.textBox4.TabIndex = 9;
+            this.saldo.Location = new System.Drawing.Point(6, 259);
+            this.saldo.Name = "saldo";
+            this.saldo.Size = new System.Drawing.Size(135, 20);
+            this.saldo.TabIndex = 9;
             // 
-            // textBox5
+            // fechacrecion
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 309);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(135, 20);
-            this.textBox5.TabIndex = 10;
+            this.fechacrecion.Location = new System.Drawing.Point(6, 309);
+            this.fechacrecion.Name = "fechacrecion";
+            this.fechacrecion.Size = new System.Drawing.Size(135, 20);
+            this.fechacrecion.TabIndex = 10;
             // 
-            // textBox6
+            // txbuscar
             // 
-            this.textBox6.Location = new System.Drawing.Point(351, 24);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(187, 20);
-            this.textBox6.TabIndex = 11;
+            this.txbuscar.Location = new System.Drawing.Point(351, 24);
+            this.txbuscar.Name = "txbuscar";
+            this.txbuscar.Size = new System.Drawing.Size(187, 20);
+            this.txbuscar.TabIndex = 11;
             // 
-            // Column1
+            // Guardar
             // 
-            this.Column1.DataPropertyName = "ID_usuario";
-            this.Column1.HeaderText = "ID Usuario";
-            this.Column1.Name = "Column1";
+            this.Guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Guardar.BackgroundImage")));
+            this.Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Guardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Guardar.IconColor = System.Drawing.Color.Black;
+            this.Guardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Guardar.Location = new System.Drawing.Point(6, 6);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(39, 29);
+            this.Guardar.TabIndex = 12;
+            this.Guardar.UseVisualStyleBackColor = true;
+            this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
-            // Column2
+            // Actualizar
             // 
-            this.Column2.DataPropertyName = "ID_Cuenta";
-            this.Column2.HeaderText = "ID Cuenta";
-            this.Column2.Name = "Column2";
+            this.Actualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Actualizar.BackgroundImage")));
+            this.Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Actualizar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Actualizar.IconColor = System.Drawing.Color.Black;
+            this.Actualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Actualizar.Location = new System.Drawing.Point(51, 6);
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.Size = new System.Drawing.Size(33, 30);
+            this.Actualizar.TabIndex = 13;
+            this.Actualizar.UseVisualStyleBackColor = true;
+            this.Actualizar.Click += new System.EventHandler(this.Actualizar_Click);
             // 
-            // Column3
+            // Eliminar
             // 
-            this.Column3.DataPropertyName = "Tipo_Cuenta";
-            this.Column3.HeaderText = "Tipo De Cuenta";
-            this.Column3.Name = "Column3";
+            this.Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Eliminar.BackgroundImage")));
+            this.Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Eliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Eliminar.IconColor = System.Drawing.Color.Black;
+            this.Eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Eliminar.Location = new System.Drawing.Point(90, 6);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(36, 29);
+            this.Eliminar.TabIndex = 14;
+            this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
-            // Column4
+            // Agregar
             // 
-            this.Column4.DataPropertyName = "Saldo";
-            this.Column4.HeaderText = "Saldo";
-            this.Column4.Name = "Column4";
+            this.Agregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Agregar.BackgroundImage")));
+            this.Agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Agregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Agregar.IconColor = System.Drawing.Color.Black;
+            this.Agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Agregar.Location = new System.Drawing.Point(132, 7);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(36, 29);
+            this.Agregar.TabIndex = 15;
+            this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
-            // Column5
+            // Buscar
             // 
-            this.Column5.DataPropertyName = "FechaDeCreacion";
-            this.Column5.HeaderText = "Fecha De Creacion";
-            this.Column5.Name = "Column5";
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton1.BackgroundImage")));
-            this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(6, 6);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(39, 29);
-            this.iconButton1.TabIndex = 12;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton2.BackgroundImage")));
-            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(51, 6);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(33, 30);
-            this.iconButton2.TabIndex = 13;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton3.BackgroundImage")));
-            this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(90, 6);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(36, 29);
-            this.iconButton3.TabIndex = 14;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton4.BackgroundImage")));
-            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(132, 7);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(36, 29);
-            this.iconButton4.TabIndex = 15;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconButton5.BackgroundImage")));
-            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(544, 22);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(31, 23);
-            this.iconButton5.TabIndex = 16;
-            this.iconButton5.UseVisualStyleBackColor = true;
+            this.Buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Buscar.BackgroundImage")));
+            this.Buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Buscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Buscar.IconColor = System.Drawing.Color.Black;
+            this.Buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Buscar.Location = new System.Drawing.Point(544, 22);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(31, 23);
+            this.Buscar.TabIndex = 16;
+            this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // Cuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.iconButton5);
-            this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.iconButton3);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Buscar);
+            this.Controls.Add(this.Agregar);
+            this.Controls.Add(this.Eliminar);
+            this.Controls.Add(this.Actualizar);
+            this.Controls.Add(this.Guardar);
+            this.Controls.Add(this.txbuscar);
+            this.Controls.Add(this.fechacrecion);
+            this.Controls.Add(this.saldo);
+            this.Controls.Add(this.tipocuenta);
+            this.Controls.Add(this.idcuenta);
+            this.Controls.Add(this.idusuario);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView);
             this.Name = "Cuentas";
-            this.Text = "Transaccion";
+            this.Text = "cuenta";
             this.Load += new System.EventHandler(this.Cuentas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,27 +290,27 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox idusuario;
+        private System.Windows.Forms.TextBox idcuenta;
+        private System.Windows.Forms.TextBox tipocuenta;
+        private System.Windows.Forms.TextBox saldo;
+        private System.Windows.Forms.TextBox fechacrecion;
+        private System.Windows.Forms.TextBox txbuscar;
+        private FontAwesome.Sharp.IconButton Guardar;
+        private FontAwesome.Sharp.IconButton Actualizar;
+        private FontAwesome.Sharp.IconButton Eliminar;
+        private FontAwesome.Sharp.IconButton Agregar;
+        private FontAwesome.Sharp.IconButton Buscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
     }
 }
